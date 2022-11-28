@@ -4,11 +4,14 @@
     <title>Book Review</title>
 </head>
 <body>
-    <h2>Book Review</h2>
+    <center>
+    <h2>Welcome to Book Reviews</h2>
+     <a href="/review/create">Add a Book Review</a><br><br>
+    </center>
     <hr>
     <h3>Reviews</h3>
-    {{ if . }}
-    {{ range . }}
+    {{ if .Reviews }}
+    {{ range .Reviews }}
     <ul>
         <li>{{.Book_name}}</li>
         <li>{{ .Review}}</li>

@@ -2,16 +2,24 @@
 <html>
 <head>
     <title>Book Review</title>
+    <link ref="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h2>Book Review</h2>
-    <hr>
-    <h3>Add a Review</h3>
+    <center>
+        <h2>Welcome to Book Reviews</h2>
+        <a href="/">Book Reviews</a>
+        <br><br><br><br>
+        <hr>
+    </center>
 
-    <form action="/review-add" id="reviewform" method="POST">
+    <form action="/review/create" id="reviewform" method="POST">
         <div>
-            <label>Author</label><br>
-            <input type="text" size="30" name="author_name">
+            <label>Author</label>
+            {{ with .ErrorsFromForm.author }}
+                <label class="error">{{ . }}</label>
+            {{end}}
+            <br>
+            <input type="text" name="author_name" value="{{ .FormData.Get "author_name"}}">
             <br>
             <label>Book Name</label><br>
             <input type="text" size="20" name="book_name">
