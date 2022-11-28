@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Review</title>
+</head>
+<body>
+    <h2>Book Review</h2>
+    <hr>
+    <h3>Reviews</h3>
+    {{ if . }}
+    {{ range . }}
+    <ul>
+        <li>{{.Book_name}}</li>
+        <li>{{ .Review}}</li>
+        <strong>--{{.Author_name}}</strong>
+    </ul>
+    {{end}}
+    {{else}}
+    <p>Nothing to see here. Move along...</p>
+    {{end}}
+
+    <footer>
+        <p>
+            <a htref="mailto:rsma@ub.edu.bz">rsma@ub.edu.bz</a>
+        </p>
+    </footer>
+</body>
+</html>
