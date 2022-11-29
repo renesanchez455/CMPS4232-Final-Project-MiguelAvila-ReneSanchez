@@ -4,7 +4,7 @@
 FROM golang:1.16-alpine 
 
 # create a folder
-WORKDIR /backend
+WORKDIR /webapp
 
 # copy files 
 COPY . /webapp
